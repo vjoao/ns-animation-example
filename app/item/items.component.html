@@ -1,0 +1,19 @@
+<ActionBar title="My App" class="action-bar">
+</ActionBar>
+
+
+<flexbox-layout class="page">
+    <grid-layout flex=1>
+        <map-view></map-view>
+        <flexbox-layout [@info]="itemState" justifyContent="flex-end">
+            <ListView (loaded)="listLoaded($event)" (itemTap)="itemTap($event)" [items]="items" class="list-group list">
+                <ng-template let-item="item">
+                    <Label [text]="item.name"
+                        class="list-group-item"></Label>
+                </ng-template>
+            </ListView>
+            <stack-layout flexGrow="1" class="red">
+            </stack-layout>
+        </flexbox-layout>
+    </grid-layout>
+</flexbox-layout>
